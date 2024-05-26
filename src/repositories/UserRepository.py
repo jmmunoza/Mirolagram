@@ -12,6 +12,9 @@ class UserRepository():
             
         return cls._instance
     
+    def getNotRepeatedFollowers(self, followers: list[User]) -> list[User]:
+        return self.service.getNotRepeatedFollowers(followers)
+    
     def getNewFollowers(self) -> list[User]:
         return self.service.getNewFollowers()
 

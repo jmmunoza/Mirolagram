@@ -5,6 +5,10 @@ from src.models.User import User
 
 class UserService(ABC):
     @abstractmethod
+    def getNotRepeatedFollowers(self, followers: list[User]) -> list[User]:
+        pass
+    
+    @abstractmethod
     def getNewFollowers(self) -> list[User]:
         pass
     
@@ -12,5 +16,6 @@ class UserService(ABC):
     def addFollowers(self, followers: list[User]) -> list[User]:
         pass
     
+    @abstractmethod
     def markFollowersAsOld(self, followers: list[User]) -> list[User]:
         pass
