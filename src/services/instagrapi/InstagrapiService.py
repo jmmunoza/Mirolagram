@@ -1,5 +1,6 @@
 from instagrapi import Client
 
+from models.Post import Post
 from src.interfaces.InstagramService import InstagramService
 from src.models.User import User
 
@@ -30,3 +31,11 @@ class InstagrapiService(InstagramService):
             return []
             
         return users
+    
+    def uploadPost(self, post: Post) -> bool:
+        try:
+            self.client.album_upload(post.media, post.caption)
+        except Exception as e:
+            return False
+        
+        return True

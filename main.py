@@ -1,5 +1,7 @@
 import argparse
 
+from handlers.CreateNewFollowersPostHandler import \
+    CreateNewFollowersPostHandler
 from src.providers.InstagramProvider import InstagramProvider
 
 if __name__ == "__main__":
@@ -15,7 +17,4 @@ if __name__ == "__main__":
     service = InstagramProvider.inject()
     service.login(username, password)
     
-    followers = service.getFollowers()
-    
-    for follower in followers:
-        print(follower)
+    CreateNewFollowersPostHandler.handle(service)
