@@ -1,6 +1,6 @@
 import argparse
 
-from handlers.CreateNewFollowersPostHandler import \
+from src.handlers.CreateNewFollowersPostHandler import \
     CreateNewFollowersPostHandler
 from src.providers.InstagramProvider import InstagramProvider
 

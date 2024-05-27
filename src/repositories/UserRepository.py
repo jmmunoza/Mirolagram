@@ -1,4 +1,4 @@
-from database.interfaces.UserService import UserService
+from src.database.peewee.services.UserServicePeewee import UserServicePeewee
 from src.models.User import User
 
 
@@ -8,7 +8,7 @@ class UserRepository():
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(UserRepository, cls).__new__(cls)
-            cls._instance.service = None # TODO
+            cls._instance.service = UserServicePeewee()
             
         return cls._instance
     

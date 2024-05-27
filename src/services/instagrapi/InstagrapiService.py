@@ -1,7 +1,7 @@
 from instagrapi import Client
 
-from models.Post import Post
 from src.interfaces.InstagramService import InstagramService
+from src.models.Post import Post
 from src.models.User import User
 
 
@@ -22,7 +22,7 @@ class InstagrapiService(InstagramService):
                     follower.pk, 
                     follower.username, 
                     follower.full_name,
-                    follower.profile_pic_url
+                    str(follower.profile_pic_url)
                 )
                 
                 users.append(user)

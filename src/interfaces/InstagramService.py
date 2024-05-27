@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from models.Post import Post
+from src.models.Post import Post
 from src.models.User import User
 
 

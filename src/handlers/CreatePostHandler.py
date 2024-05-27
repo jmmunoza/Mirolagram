@@ -1,13 +1,11 @@
-from msilib.schema import Media
-
-from models.Post import Post
-from models.User import User
+from src.models.Post import Post
+from src.models.User import User
 
 
 class CreatePostHandler:
     @staticmethod
-    def handle(self, newFollowers: list[User]) -> Post:
-        media = [Media("image1.jpg"), Media("image2.jpg")]
+    def handle(newFollowers: list[User]) -> Post:
+        media = [("image1.jpg"), ("image2.jpg")]
         caption = "Welcome to my profile!"
         caption += "\n\n"
         caption += "New followers: "
